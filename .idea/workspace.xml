@@ -29,10 +29,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Update cmake to use nlohmann_json and sfml">
-      <change afterPath="$PROJECT_DIR$/data/test.json" afterDir="false" />
+    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Add sample test candle data">
+      <change afterPath="$PROJECT_DIR$/data/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/CSVParser.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/Candlestick.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSVParser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Candlestick.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +68,9 @@
     </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/include/Candlestick.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -100,6 +109,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -158,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734079715696</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add sample test candle data">
+      <option name="closed" value="true" />
+      <created>1734080644194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734080644194</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +204,7 @@
     <MESSAGE value="Init project" />
     <MESSAGE value="Add new gitignore" />
     <MESSAGE value="Update cmake to use nlohmann_json and sfml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update cmake to use nlohmann_json and sfml" />
+    <MESSAGE value="Add sample test candle data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add sample test candle data" />
   </component>
 </project>
