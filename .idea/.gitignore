@@ -1,0 +1,48 @@
+# Compiled object files and binaries
+*.o
+*.out
+*.exe
+
+# Build directories
+/build/
+*.vcxproj
+*.vcxproj.user
+*.sln
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Logs and debugging files
+*.log
+
+# System-specific files
+.DS_Store          # macOS Finder metadata
+Thumbs.db          # Windows thumbnail cache
+*.swp              # Vim swap files
+*.bak              # Backup files
+*.tmp              # Temporary files
+*.~*               # Temp editor files
+
+# IDE-specific files
+.idea/             # JetBrains IDEs (e.g., CLion)
+.vscode/           # Visual Studio Code
+*.code-workspace   # VSCode workspace files
+
+# External libraries and dependencies
+/libs/SFML/build/
+.libs/             # Temporary library builds (if applicable)
+
+# Stock data and generated assets
+/data/*.csv        # Keep only example CSVs, if any
+/assets/*.png      # Generated images from the app (e.g., chart exports)
+
+# Test output
+/tests/*.out
+/tests/*.log
+
+# Documentation builds (if using tools like Doxygen)
+docs/html/
+docs/latex/
