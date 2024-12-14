@@ -29,12 +29,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Update to render 1 year of daily data">
+    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Update renderer">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/pics/ui.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Candlestick.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Candlestick.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSVParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSVParser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Candlestick.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Candlestick.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +63,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Update renderer" />
+        <option name="rewordedMessage" value="Update renderer" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="312cc30bf1d165e8cb57d0dc3543eec34c4239bf" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/Candlestick.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/Candlestick.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/Candlestick.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/CSVParser.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -108,11 +119,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/pics" />
+      <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$/rsc" />
       <recent name="$PROJECT_DIR$/include" />
       <recent name="$PROJECT_DIR$/fonts" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -185,7 +196,39 @@
       <option name="project" value="LOCAL" />
       <updated>1734083949955</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update CSVParser to handle m/d/Y format">
+      <option name="closed" value="true" />
+      <created>1734144055792</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734144055793</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update Candlestick to store tm over string date">
+      <option name="closed" value="true" />
+      <created>1734144084717</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734144084717</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update renderer">
+      <option name="closed" value="true" />
+      <created>1734144102546</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734144102546</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update renderer">
+      <option name="closed" value="true" />
+      <created>1734144121350</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734144121350</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +256,9 @@
     <MESSAGE value="Update cmake to use nlohmann_json and sfml" />
     <MESSAGE value="Add sample test candle data" />
     <MESSAGE value="Update to render 1 year of daily data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to render 1 year of daily data" />
+    <MESSAGE value="Update CSVParser to handle m/d/Y format" />
+    <MESSAGE value="Update Candlestick to store tm over string date" />
+    <MESSAGE value="Update renderer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update renderer" />
   </component>
 </project>
