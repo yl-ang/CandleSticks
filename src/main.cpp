@@ -4,8 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <chrono>
 #include <iomanip>
+#include <sstream>
+#include <ctime>
 
 int main() {
     std::vector<Candlestick> candlesticks;
@@ -15,12 +16,9 @@ int main() {
         return 1;
     }
 
-    std::sort(candlesticks.begin(), candlesticks.end(), [](const Candlestick& a, const Candlestick& b) {
-        return a.getTimestamp() < b.getTimestamp();
-    });
+    std::sort(candlesticks.begin(), candlesticks.end());
 
-    // SFML window setup
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Candlestick Chart");
+    sf::RenderWindow window(sf::VideoMode(800, 650), "Candlestick Chart");
     window.setFramerateLimit(60);
 
     double minPrice = std::numeric_limits<double>::max();
@@ -31,10 +29,11 @@ int main() {
         maxPrice = std::max(maxPrice, std::max({candlestick.getOpen(), candlestick.getHigh(), candlestick.getLow(), candlestick.getClose()}));
     }
 
-    float scale = 600.0f / (maxPrice - minPrice);
+    float scale = 500.0f / (maxPrice - minPrice);
 
-    float width = 2.0f;
-    float spacing = 1.0f;
+    float totalWidth = 800.0f;
+    float width = totalWidth / candlesticks.size() * 0.7f;
+    float spacing = totalWidth / candlesticks.size() * 0.3f;
 
     sf::Font font;
     if (!font.loadFromFile("../fonts/Arial.ttf")) {
@@ -43,23 +42,59 @@ int main() {
     }
 
     sf::Text xAxisLabel("Date", font, 18);
-    xAxisLabel.setPosition(370.0f, 580.0f);
+    xAxisLabel.setFillColor(sf::Color::Black);
+    xAxisLabel.setPosition(370.0f, 610.0f);
 
     sf::Text yAxisLabel("Price", font, 18);
+    yAxisLabel.setFillColor(sf::Color::Black);
+    yAxisLabel.setRotation(-90.0f);
     yAxisLabel.setPosition(10.0f, 250.0f);
+
+    // Tooltip for candlestick details
+    sf::Text tooltipText("", font, 14);
+    tooltipText.setFillColor(sf::Color::Black);
+    tooltipText.setStyle(sf::Text::Bold);
+
+    sf::RectangleShape tooltipBackground(sf::Vector2f(150.0f, 80.0f));
+    tooltipBackground.setFillColor(sf::Color::White);
+    tooltipBackground.setOutlineColor(sf::Color::Black);
+    tooltipBackground.setOutlineThickness(1.0f);
+
+    sf::View graphView(sf::FloatRect(0, 0, 800, 650));
+    sf::View axisView(sf::FloatRect(0, 0, 800, 650));
+
+    // Zoom factor
+    float zoomFactor = 1.0f;
 
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Equal) {
+                    zoomFactor *= 0.9f;
+                    graphView.zoom(0.9f);
+                } else if (event.key.code == sf::Keyboard::Dash) {
+                    zoomFactor *= 1.1f;
+                    graphView.zoom(1.1f);
+                }
+                window.setView(graphView);
+            }
         }
 
         window.clear(sf::Color::White);
 
-        float xPosition = 50.0f;
+        sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+        sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, graphView);
 
-        for (const auto& candlestick : candlesticks) {
+        float xPosition = 0.0f;
+        bool hoverDetected = false;
+
+        window.setView(graphView);
+        for (size_t i = 0; i < candlesticks.size(); ++i) {
+            const auto& candlestick = candlesticks[i];
             float openPos = 600.0f - (candlestick.getOpen() - minPrice) * scale;
             float closePos = 600.0f - (candlestick.getClose() - minPrice) * scale;
             float highPos = 600.0f - (candlestick.getHigh() - minPrice) * scale;
@@ -76,13 +111,53 @@ int main() {
             window.draw(candleBody);
             window.draw(candleWick);
 
-            sf::Text dateLabel(candlestick.getTimestamp(), font, 10);
-            dateLabel.setPosition(xPosition, 590.0f);  // Place the date below the candlestick
-            window.draw(dateLabel);
+            if (!hoverDetected &&
+                worldMousePosition.x >= xPosition &&
+                worldMousePosition.x <= xPosition + width &&
+                worldMousePosition.y >= std::min(openPos, closePos) &&
+                worldMousePosition.y <= std::max(openPos, closePos)) {
+
+                hoverDetected = true;
+
+                std::ostringstream details;
+                details << "Date: " << std::put_time(&candlestick.getTimestamp(), "%Y-%m-%d %H:%M:%S") << "\n"
+                        << "Open: " << candlestick.getOpen() << "\n"
+                        << "Close: " << candlestick.getClose() << "\n"
+                        << "High: " << candlestick.getHigh() << "\n"
+                        << "Low: " << candlestick.getLow();
+
+                tooltipText.setString(details.str());
+                tooltipBackground.setSize(sf::Vector2f(tooltipText.getGlobalBounds().width + 10.0f,
+                                                       tooltipText.getGlobalBounds().height + 10.0f));
+                tooltipBackground.setPosition(worldMousePosition.x + 10.0f, worldMousePosition.y + 10.0f);
+                tooltipText.setPosition(worldMousePosition.x + 15.0f, worldMousePosition.y + 15.0f);
+            }
+
+            // Extract the month (0-based) from the timestamp
+            std::tm timestamp = candlestick.getTimestamp();
+            int currentMonth = timestamp.tm_mon;
+
+            // Draw month label every time a new month starts
+            if (i == 0 || currentMonth != candlesticks[i-1].getTimestamp().tm_mon) {
+                std::ostringstream monthLabel;
+                monthLabel << std::put_time(&timestamp, "%b"); // Abbreviation for month
+
+                sf::Text monthText(monthLabel.str(), font, 12);
+                monthText.setFillColor(sf::Color::Black);
+                monthText.setPosition(xPosition + width / 2 - monthText.getGlobalBounds().width / 2, 620.0f); // Position it below the candlestick
+                window.draw(monthText);
+            }
 
             xPosition += width + spacing;
         }
 
+        if (hoverDetected) {
+            window.setView(window.getDefaultView());
+            window.draw(tooltipBackground);
+            window.draw(tooltipText);
+        }
+
+        window.setView(axisView);
         window.draw(xAxisLabel);
         window.draw(yAxisLabel);
 
