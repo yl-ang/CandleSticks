@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <ctime>
 
 double parseCurrency(const std::string& str) {
     std::string cleanStr = str;
@@ -16,6 +17,17 @@ double parseCurrency(const std::string& str) {
         std::cerr << "Error parsing currency: " << str << std::endl;
         return 0.0;
     }
+}
+
+std::tm parseDate(const std::string& dateStr) {
+    std::tm tm = {};
+    std::istringstream ss(dateStr);
+    ss >> std::get_time(&tm, "%m/%d/%Y");
+    if (ss.fail()) {
+        std::cerr << "Error parsing date: " << dateStr << std::endl;
+        throw std::invalid_argument("Invalid date format");
+    }
+    return tm;
 }
 
 bool CSVParser::parseCSV(const std::string& filename, std::vector<Candlestick>& candlesticks) {
@@ -46,14 +58,14 @@ bool CSVParser::parseCSV(const std::string& filename, std::vector<Candlestick>& 
         std::getline(ss, highStr, ',');        // High
         std::getline(ss, lowStr, ',');         // Low
 
-        // Convert the string data to appropriate types
         try {
+            std::tm date_tm = parseDate(date);
             double open = parseCurrency(openStr);
             double high = parseCurrency(highStr);
             double low = parseCurrency(lowStr);
             double close = parseCurrency(closeStr);
 
-            Candlestick candle(date, open, high, low, close);
+            Candlestick candle(date_tm, open, high, low, close);
             candlesticks.push_back(candle);
         } catch (const std::exception& e) {
             std::cerr << "Error: Could not parse data in line: " << line << "\n" << e.what() << std::endl;
