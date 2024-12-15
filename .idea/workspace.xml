@@ -29,8 +29,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Update main.cpp">
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Use std::ranges over std::remove">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tooltip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tooltip.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +82,13 @@
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/ViewManager.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/AxisRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/CSVParser.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/CSVParser.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/ChartRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Tooltip.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/ViewManager.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -300,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734249598027</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Use std::ranges over std::remove">
+      <option name="closed" value="true" />
+      <created>1734250666017</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1734250666017</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +350,7 @@
     <MESSAGE value="Update tooltip to handle tooltip price popup" />
     <MESSAGE value="Update ViewManager for zooming, resetting view scale" />
     <MESSAGE value="Update main.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update main.cpp" />
+    <MESSAGE value="Use std::ranges over std::remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use std::ranges over std::remove" />
   </component>
 </project>
