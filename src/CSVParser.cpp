@@ -9,7 +9,7 @@
 
 double parseCurrency(const std::string& str) {
     std::string cleanStr = str;
-    cleanStr.erase(std::remove(cleanStr.begin(), cleanStr.end(), '$'), cleanStr.end());
+    cleanStr.erase(std::ranges::remove(cleanStr, '$').begin(), cleanStr.end());
 
     try {
         return std::stod(cleanStr);

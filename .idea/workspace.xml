@@ -29,16 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Create Tooltip and ViewManager">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/AxisRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/AxisRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/ChartRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ChartRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Tooltip.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Tooltip.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/ViewManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ViewManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AxisRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/AxisRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChartRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChartRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tooltip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tooltip.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewManager.cpp" afterDir="false" />
+    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Update main.cpp">
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,12 +72,21 @@
     <option name="onto" value="312cc30bf1d165e8cb57d0dc3543eec34c4239bf" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/Candlestick.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/AxisRenderer.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/Candlestick.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/Candlestick.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/Candlestick.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/ChartRenderer.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/Tooltip.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/include/ViewManager.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/AxisRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/CSVParser.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/ChartRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Tooltip.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/ViewManager.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -260,7 +260,47 @@
       <option name="project" value="LOCAL" />
       <updated>1734245294549</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update AxisRenderer">
+      <option name="closed" value="true" />
+      <created>1734249485197</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734249485197</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update ChartRenderer to return zoom scale">
+      <option name="closed" value="true" />
+      <created>1734249519915</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1734249519915</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update tooltip to handle tooltip price popup">
+      <option name="closed" value="true" />
+      <created>1734249558078</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734249558078</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update ViewManager for zooming, resetting view scale">
+      <option name="closed" value="true" />
+      <created>1734249586328</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1734249586328</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update main.cpp">
+      <option name="closed" value="true" />
+      <created>1734249598027</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1734249598027</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +334,11 @@
     <MESSAGE value="Add README" />
     <MESSAGE value="Create AxisRenderer and ChartRenderer" />
     <MESSAGE value="Create Tooltip and ViewManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Tooltip and ViewManager" />
+    <MESSAGE value="Update AxisRenderer" />
+    <MESSAGE value="Update ChartRenderer to return zoom scale" />
+    <MESSAGE value="Update tooltip to handle tooltip price popup" />
+    <MESSAGE value="Update ViewManager for zooming, resetting view scale" />
+    <MESSAGE value="Update main.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update main.cpp" />
   </component>
 </project>

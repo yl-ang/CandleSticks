@@ -38,9 +38,7 @@ int main() {
     }
 
     ChartRenderer chartRenderer(candlesticks, minPrice, maxPrice, font);
-
     Tooltip tooltip(font);
-
     AxisRenderer axisRenderer(font, 800.0f, 650.0f);
 
     sf::View graphView(sf::FloatRect(0, 0, 800, 650));
