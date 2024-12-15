@@ -29,10 +29,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Update renderer">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/pics/ui.png" afterDir="false" />
+    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Add README">
+      <change afterPath="$PROJECT_DIR$/include/AxisRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/ChartRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/Tooltip.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/ViewManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AxisRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChartRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tooltip.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ViewManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734144121350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add README">
+      <option name="closed" value="true" />
+      <created>1734144666674</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1734144666674</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +275,7 @@
     <MESSAGE value="Update CSVParser to handle m/d/Y format" />
     <MESSAGE value="Update Candlestick to store tm over string date" />
     <MESSAGE value="Update renderer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update renderer" />
+    <MESSAGE value="Add README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README" />
   </component>
 </project>

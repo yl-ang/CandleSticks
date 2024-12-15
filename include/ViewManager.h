@@ -1,0 +1,4 @@
+#ifndef VIEWMANAGER_H
+#define VIEWMANAGER_H
+
+#endif //VIEWMANAGER_H
