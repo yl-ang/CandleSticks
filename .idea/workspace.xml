@@ -29,17 +29,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Add README">
-      <change afterPath="$PROJECT_DIR$/include/AxisRenderer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/ChartRenderer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/Tooltip.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/ViewManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AxisRenderer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChartRenderer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tooltip.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ViewManager.cpp" afterDir="false" />
+    <list default="true" id="36f4afd2-97c2-49c8-aec4-029ee765b809" name="Changes" comment="Create Tooltip and ViewManager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/AxisRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/AxisRenderer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/ChartRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ChartRenderer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Tooltip.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Tooltip.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/ViewManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ViewManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AxisRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/AxisRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChartRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChartRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tooltip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tooltip.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +87,7 @@
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/CSVParser.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/Candlestick.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/yongliangang/CLionProjects/CandleSticks/src/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
@@ -244,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734144666674</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Create AxisRenderer and ChartRenderer">
+      <option name="closed" value="true" />
+      <created>1734245267452</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734245267452</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Create Tooltip and ViewManager">
+      <option name="closed" value="true" />
+      <created>1734245294549</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734245294549</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +292,8 @@
     <MESSAGE value="Update Candlestick to store tm over string date" />
     <MESSAGE value="Update renderer" />
     <MESSAGE value="Add README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add README" />
+    <MESSAGE value="Create AxisRenderer and ChartRenderer" />
+    <MESSAGE value="Create Tooltip and ViewManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Tooltip and ViewManager" />
   </component>
 </project>
