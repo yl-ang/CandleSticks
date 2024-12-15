@@ -18,13 +18,13 @@ void ChartRenderer::calculateScale() {
 void ChartRenderer::render(sf::RenderWindow &window) const {
     window.setView(graphView);
 
-    float xPosition = 0.01f;
+    float xPosition = 50.0f;  // Start after the Y-axis
 
     for (const auto& candlestick : candlesticks) {
         float openPos = 600.0f - (candlestick.getOpen() - minPrice) * scale;
-        float closePos = 600.0f - (candlestick.getClose() - maxPrice) * scale;
+        float closePos = 600.0f - (candlestick.getClose() - minPrice) * scale;
         float highPos = 600.0f - (candlestick.getHigh() - minPrice) * scale;
-        float lowPos = 600.0f - (candlestick.getLow() - maxPrice) * scale;
+        float lowPos = 600.0f - (candlestick.getLow() - minPrice) * scale;
 
         sf::RectangleShape candleBody(sf::Vector2f{width, std::abs(openPos - closePos)});
         candleBody.setPosition(xPosition, openPos < closePos ? closePos : openPos);
@@ -74,4 +74,8 @@ const Candlestick *ChartRenderer::getHoveredCandlestick(const sf::RenderWindow &
         xPosition += width + spacing;
     }
     return nullptr;
+}
+
+float ChartRenderer::getZoomFactor() const {
+    return scale;
 }

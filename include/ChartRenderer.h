@@ -8,11 +8,10 @@
 class ChartRenderer {
 public:
     ChartRenderer(const std::vector<Candlestick>& candlesticks, double minPrice, double maxPrice, const sf::Font& font);
-
     void render(sf::RenderWindow& window) const;
     void handleEvent(const sf::Event& event, sf::RenderWindow& window);
-
     const Candlestick* getHoveredCandlestick(const sf::RenderWindow& window) const;
+    float getZoomFactor() const;
 
 private:
     const std::vector<Candlestick>& candlesticks;
