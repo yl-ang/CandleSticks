@@ -9,8 +9,8 @@
 #include <ctime>
 
 int main() {
+    // --- Load Data ---
     std::vector<Candlestick> candlesticks;
-
     if (!CSVParser::parseCSV("../data/data.csv", candlesticks)) {
         std::cerr << "Failed to parse CSV file!" << std::endl;
         return 1;
@@ -18,6 +18,7 @@ int main() {
 
     std::sort(candlesticks.begin(), candlesticks.end());
 
+    // --- Initialize Components ---
     sf::RenderWindow window(sf::VideoMode(800, 650), "Candlestick Chart");
     window.setFramerateLimit(60);
 
@@ -50,7 +51,6 @@ int main() {
     yAxisLabel.setRotation(-90.0f);
     yAxisLabel.setPosition(10.0f, 250.0f);
 
-    // Tooltip for candlestick details
     sf::Text tooltipText("", font, 14);
     tooltipText.setFillColor(sf::Color::Black);
     tooltipText.setStyle(sf::Text::Bold);
@@ -66,6 +66,7 @@ int main() {
     // Zoom factor
     float zoomFactor = 1.0f;
 
+    // --- Main Loop ---
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -104,7 +105,7 @@ int main() {
             candleBody.setPosition(xPosition, openPos < closePos ? closePos : openPos);
             candleBody.setFillColor(candlestick.getOpen() > candlestick.getClose() ? sf::Color::Red : sf::Color::Green);
 
-            sf::RectangleShape candleWick(sf::Vector2f(2.0f, std::abs(highPos - lowPos)));
+            sf::RectangleShape candleWick(sf::Vector2f(1.5f, std::abs(highPos - lowPos)));
             candleWick.setPosition(xPosition + width / 2.0f - 1.0f, lowPos);
             candleWick.setFillColor(sf::Color::Black);
 
@@ -133,18 +134,18 @@ int main() {
                 tooltipText.setPosition(worldMousePosition.x + 15.0f, worldMousePosition.y + 15.0f);
             }
 
-            // Extract the month (0-based) from the timestamp
+
             std::tm timestamp = candlestick.getTimestamp();
             int currentMonth = timestamp.tm_mon;
 
-            // Draw month label every time a new month starts
+
             if (i == 0 || currentMonth != candlesticks[i-1].getTimestamp().tm_mon) {
                 std::ostringstream monthLabel;
-                monthLabel << std::put_time(&timestamp, "%b"); // Abbreviation for month
+                monthLabel << std::put_time(&timestamp, "%b");
 
                 sf::Text monthText(monthLabel.str(), font, 12);
                 monthText.setFillColor(sf::Color::Black);
-                monthText.setPosition(xPosition + width / 2 - monthText.getGlobalBounds().width / 2, 620.0f); // Position it below the candlestick
+                monthText.setPosition(xPosition + width / 2 - monthText.getGlobalBounds().width / 2, 620.0f);
                 window.draw(monthText);
             }
 
