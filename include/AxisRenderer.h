@@ -8,9 +8,8 @@
 class AxisRenderer {
 public:
     AxisRenderer(const sf::Font& font, float chartWidth, float chartHeight);
-
-    void drawXAxis(sf::RenderWindow& window, const std::vector<Candlestick>& candlesticks) const;
-    void drawYAxis(sf::RenderWindow& window, double minPrice, double maxPrice) const;
+    void drawXAxis(sf::RenderWindow &window, const std::vector<Candlestick> &candlesticks) const;
+    void drawYAxis(sf::RenderWindow &window, double minPrice, double maxPrice) const;
 
 private:
     const sf::Font& font;
