@@ -1,6 +1,6 @@
 # Candle Sticker Visualizer
 
-## Frameworks, libraries, and Equality Data
+## Frameworks, libraries, and Equlity Data
 
 - C++20
 - SFML Graphics
